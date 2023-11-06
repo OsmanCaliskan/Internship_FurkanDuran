@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
+// Bir değişkenin public ya da private olmasını neye göre karar verdin
+// set get fonksiyonları tam olarak hangi problemi çözüyor ?
+
 public class CubeBehaviour : MonoBehaviour
 {
     public int index;
@@ -12,10 +15,11 @@ public class CubeBehaviour : MonoBehaviour
     public Vector3 startPos;
     public Vector3 center;
     public float hover = -0.1f;
+    
     int state = 0;
     public int myRow;
     public int myColumn;
-
+    
     public Material Material1;
     public Material Material2;
     public Material Material3;
@@ -55,23 +59,28 @@ public class CubeBehaviour : MonoBehaviour
         
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
         
+        //state 0 1 2 neyi simgeliyo ?
         if (state == 0)
         {
+            // yanlış lerp kullanımı fps dependent
             transform.position = Vector3.Lerp(transform.position, startPos, lerper);
             myColumn = -1;
             myRow = -1;
         }
         else if (state == 1)
         {
+            // yanlış lerp kullanımı fps dependent
             transform.position = Vector3.Lerp(transform.position + new Vector3(0, 0, hover), worldPos + offSet + center, lerper);
         }
         else if (state == 2)
         {
+            // yanlış lerp kullanımı fps dependent
             transform.position = Vector3.Lerp(transform.position, startPos, lerper);
             index = -2;
         }
         else if (state == 3)
         {
+            // yanlış lerp kullanımı fps dependent
             transform.position = Vector3.Lerp(transform.position, startPos, lerper);
             if (transform.localScale.x <= 0.1f)
             {

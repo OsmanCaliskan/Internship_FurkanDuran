@@ -1,0 +1,7 @@
+Kullanılmayan debugları sil
+scriptlerin ve değişkenlerin isimleri manasız ne olduğu belli değil
+fonksiyon isimlerinin bazıları camelCase bazıları UpperCase yazılmış neden ?
+
+genel olarak kod parçalanmaya çalışılmış ama parçalama kötü olmuş
+genel olarak grid, input, effect adı altında ayrılsa daha temiz olurdu
+okunması çok zor, okurken çok fazla fonksiyonda fonksiyona atlıyorum
